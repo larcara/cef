@@ -28,7 +28,7 @@ module CEF
       else
         fail ArgumentError, "#{config} is not a valid CEF configuration"
     end
-        
+
     logger_type = case type
       when Class
         type

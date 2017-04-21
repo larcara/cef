@@ -72,7 +72,7 @@ cef_sender.receiver=@receiver_host
 cef_sender.receiverPort=@receiver_port
 
 
-msg=cef_event.format_cef
+msg=cef_event.format_prefix
 
 
 if @verbose>0
