@@ -122,7 +122,12 @@ module CEF
           shortname = CEF::EXTENSION_ATTRIBUTES[meth]
           [shortname, escape_extension_value(value)].join("=")
         end
-
+        additional = @additional.each do |k,v|
+          value = v
+          next if value.nil?
+          shortname = k.to_s
+          [shortname, escape_extension_value(value)].join("=")
+        end
         # make sure time comes out as milliseconds since epoch
         times = CEF::TIME_ATTRIBUTES.keys.map do |meth|
           value = self.send(meth)
