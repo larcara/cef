@@ -122,8 +122,8 @@ module CEF
           shortname = CEF::EXTENSION_ATTRIBUTES[meth]
           [shortname, escape_extension_value(value)].join("=")
         end
-        additional = @additional.each do |k,v|
-          value = v
+        additional = @additional.keys.map do |k|
+          value = @additional[k]
           next if value.nil?
           shortname = k.to_s
           [shortname, escape_extension_value(value)].join("=")
