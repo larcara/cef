@@ -135,7 +135,7 @@ module CEF
           shortname = CEF::TIME_ATTRIBUTES[meth]
           [shortname, escape_extension_value(value)].join("=")
         end
-        (extensions + times).compact.join(" ")
+        (extensions + additional + times).compact.join(" ")
       end
   end
 end
